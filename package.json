@@ -1,0 +1,12 @@
+{
+  "name": "trab3",
+  "private": true,
+  "workspaces": [
+    "server"
+  ],
+  "scripts": {
+    "dev": "bun --filter '*' dev",
+    "build": "bun --filter '*' build",
+    "seed": "bun --filter server seed"
+  }
+}

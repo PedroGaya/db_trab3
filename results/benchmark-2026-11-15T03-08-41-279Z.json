@@ -1,0 +1,768 @@
+{
+  "generatedAt": "2026-11-15T03:08:41.279Z",
+  "seed": null,
+  "options": {
+    "seed": null,
+    "runs": 20,
+    "warmup": 3,
+    "depth": 6,
+    "limit": 10,
+    "ops": [
+      "reachable",
+      "shortestPath",
+      "recommend"
+    ],
+    "outDir": "C:\\Users\\pedro\\git\\temp\\db_trab3\\results"
+  },
+  "benchmarks": [
+    {
+      "operation": {
+        "id": "reachable",
+        "label": "Reachable within N hops",
+        "category": "traversal",
+        "description": "Everyone reachable by following up to `depth` hops out.",
+        "uses": [
+          "user",
+          "depth"
+        ]
+      },
+      "request": {
+        "operation": "reachable",
+        "runs": 20,
+        "warmup": 3,
+        "depth": 6,
+        "maxDepth": 6,
+        "limit": 10,
+        "budgetMs": 60000
+      },
+      "dataset": {
+        "users": 100000,
+        "posts": 300000,
+        "follows": 1000889
+      },
+      "input": {
+        "user": "0795c665-f951-4e08-a12a-66bf52b5c8b3",
+        "depth": 6
+      },
+      "runsCompleted": 14,
+      "budgetExceeded": true,
+      "equivalence": {
+        "equal": true,
+        "mismatchedRuns": 0,
+        "first": null
+      },
+      "results": {
+        "sqlite": {
+          "timings": {
+            "count": 14,
+            "min": 117.079,
+            "median": 2701.888,
+            "mean": 2659.709,
+            "p95": 3868.407,
+            "max": 3868.407
+          },
+          "runsMs": [
+            117.079,
+            1946.562,
+            3655.961,
+            2596.473,
+            2792.284,
+            2305.496,
+            2259.988,
+            2048.058,
+            3103.536,
+            3587.688,
+            2757.323,
+            2646.452,
+            3550.612,
+            3868.407
+          ],
+          "errors": 0,
+          "firstError": null,
+          "sample": {
+            "result": [
+              {
+                "id": "000051f8-b98c-4a36-8c37-fe57ba7a76b1",
+                "name": "Bruno Queiroz",
+                "email": "bruno.queiroz.23201@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-01-17T02:41:00.000Z"
+              },
+              {
+                "id": "0006b8cc-841c-419f-8768-4a323b6a5798",
+                "name": "João Barros",
+                "email": "joao.barros.41293@example.com",
+                "city": "Campinas",
+                "createdAt": "2024-01-29T16:13:00.000Z"
+              },
+              {
+                "id": "0009212c-acf9-403b-b650-a4e77767beff",
+                "name": "Marina Almeida",
+                "email": "marina.almeida.2598@example.com",
+                "city": "Curitiba",
+                "createdAt": "2024-01-02T19:18:00.000Z"
+              },
+              {
+                "id": "0010d9c9-51ca-40bf-b49a-4db90eada551",
+                "name": "Iara Esteves",
+                "email": "iara.esteves.28357@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-01-20T16:37:00.000Z"
+              },
+              {
+                "id": "0011cfef-3323-4a17-8a56-19ee1e0ff1cf",
+                "name": "Diego Gomes",
+                "email": "diego.gomes.86629@example.com",
+                "city": "Belém",
+                "createdAt": "2024-03-01T03:49:00.000Z"
+              },
+              {
+                "id": "00124c61-b7f0-49ad-9f23-ae563ff34a5d",
+                "name": "Hugo Esteves",
+                "email": "hugo.esteves.11855@example.com",
+                "city": "Salvador",
+                "createdAt": "2024-01-09T05:35:00.000Z"
+              },
+              {
+                "id": "00149d99-9946-43fc-a479-9e084cddfe77",
+                "name": "Olivia Esteves",
+                "email": "olivia.esteves.8172@example.com",
+                "city": "Manaus",
+                "createdAt": "2024-01-06T16:12:00.000Z"
+              },
+              {
+                "id": "001995bc-7ded-45c4-81df-b260ebe75f5c",
+                "name": "Pedro Oliveira",
+                "email": "pedro.oliveira.47718@example.com",
+                "city": "João Pessoa",
+                "createdAt": "2024-02-03T03:18:00.000Z"
+              },
+              {
+                "id": "001fc66d-1967-47e3-b7ee-f1461c8c10cb",
+                "name": "Olivia Gomes",
+                "email": "olivia.gomes.53867@example.com",
+                "city": "Campinas",
+                "createdAt": "2024-02-07T09:47:00.000Z"
+              },
+              {
+                "id": "0025e9ee-0971-494e-8bd5-b663aa25f2a3",
+                "name": "Sofia Ribeiro",
+                "email": "sofia.ribeiro.2499@example.com",
+                "city": "Curitiba",
+                "createdAt": "2024-01-02T17:39:00.000Z"
+              },
+              {
+                "id": "002904df-0e26-4f4c-936e-33f7cf235848",
+                "name": "Nuno Vieira",
+                "email": "nuno.vieira.65785@example.com",
+                "city": "João Pessoa",
+                "createdAt": "2024-02-15T16:25:00.000Z"
+              },
+              {
+                "id": "002b42e8-ffbd-461c-9d20-866ff200a903",
+                "name": "Pedro Henriques",
+                "email": "pedro.henriques.1437@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-01-01T23:57:00.000Z"
+              },
+              {
+                "id": "002dfac4-45e6-42a6-995f-3b243bcae146",
+                "name": "Ana Gomes",
+                "email": "ana.gomes.71183@example.com",
+                "city": "Natal",
+                "createdAt": "2024-02-19T10:23:00.000Z"
+              },
+              {
+                "id": "002f2d3a-d125-4788-ae2c-ef01ac763416",
+                "name": "Rafael Vieira",
+                "email": "rafael.vieira.45356@example.com",
+                "city": "Natal",
+                "createdAt": "2024-02-01T11:56:00.000Z"
+              },
+              {
+                "id": "00301120-02b2-4f3d-8abf-74c48841a912",
+                "name": "Nuno Queiroz",
+                "email": "nuno.queiroz.5467@example.com",
+                "city": "Maceió",
+                "createdAt": "2024-01-04T19:07:00.000Z"
+              },
+              {
+                "id": "0033705f-9ad0-4af1-8510-99ac5ec388ce",
+                "name": "Gabriela Nunes",
+                "email": "gabriela.nunes.25595@example.com",
+                "city": "Rio de Janeiro",
+                "createdAt": "2024-01-18T18:35:00.000Z"
+              },
+              {
+                "id": "003499a8-57bc-4d94-8bef-af1faf1782df",
+                "name": "João Vieira",
+                "email": "joao.vieira.35245@example.com",
+                "city": "Curitiba",
+                "createdAt": "2024-01-25T11:25:00.000Z"
+              },
+              {
+                "id": "00382071-81a0-4166-93f6-6136a49715bc",
+                "name": "Pedro Henriques",
+                "email": "pedro.henriques.56640@example.com",
+                "city": "São Luís",
+                "createdAt": "2024-02-09T08:00:00.000Z"
+              },
+              {
+                "id": "003b0a36-72cb-44cc-bfab-fe7d4baeed86",
+                "name": "Queila Queiroz",
+                "email": "queila.queiroz.71165@example.com",
+                "city": "Manaus",
+                "createdAt": "2024-02-19T10:05:00.000Z"
+              },
+              {
+                "id": "003de74f-599a-4331-86d8-845be16133f9",
+                "name": "Gabriela Gomes",
+                "email": "gabriela.gomes.86005@example.com",
+                "city": "João Pessoa",
+                "createdAt": "2024-02-29T17:25:00.000Z"
+              },
+              {
+                "id": "00465312-513a-4d3c-85e3-5fb86f83e0b2",
+                "name": "Queila Nunes",
+                "email": "queila.nunes.7634@example.com",
+                "city": "Recife",
+                "createdAt": "2024-01-06T07:14:00.000Z"
+              },
+              {
+                "id": "00469b64-c4b9-4e9d-80c9-000c4ab07991",
+                "name": "Nuno Santos",
+                "email": "nuno.santos.90560@example.com",
+                "city": "Maceió",
+                "createdAt": "2024-03-03T21:20:00.000Z"
+              },
+              {
+                "id": "00504db1-4ae9-49ec-af26-8b5a6f6c9525",
+                "name": "Olivia Ferreira",
+                "email": "olivia.ferreira.13016@example.com",
+                "city": "Brasília",
+                "createdAt": "2024-01-10T00:56:00.000Z"
+              },
+              {
+                "id": "00557df8-db56-4797-9634-efcf7816c4aa",
+                "name": "Carla Cardoso",
+                "email": "carla.cardoso.15177@example.com",
+                "city": "Teresina",
+                "createdAt": "2024-01-11T12:57:00.000Z"
+              },
+              {
+                "id": "0058c2f8-fe56-4931-9423-0f6e7f670582",
+                "name": "Diego Cardoso",
+                "email": "diego.cardoso.78564@example.com",
+                "city": "Salvador",
+                "createdAt": "2024-02-24T13:24:00.000Z"
+              }
+            ],
+            "resultCount": 18590,
+            "truncated": true,
+            "queries": [
+              "WITH RECURSIVE walk(node, depth) AS ( SELECT ?, 0 UNION SELECT f.followee_id, w.depth + 1 FROM walk w JOIN follows f ON f.follower_id = w.node WHERE w.depth < ? ) SELECT u.* FROM users u WHERE u.id IN (SELECT node FROM walk WHERE depth > 0) AND u.id <> ? ORDER BY u.id  -- params: [\"0795c665-f951-4e08-a12a-66bf52b5c8b3\",6,\"0795c665-f951-4e08-a12a-66bf52b5c8b3\"]"
+            ]
+          }
+        },
+        "neo4j": {
+          "timings": {
+            "count": 14,
+            "min": 131.313,
+            "median": 793.34,
+            "mean": 878.132,
+            "p95": 1389.174,
+            "max": 1389.174
+          },
+          "runsMs": [
+            131.313,
+            630.734,
+            1389.174,
+            1069.407,
+            790.041,
+            1034.829,
+            746.117,
+            690.642,
+            1070.621,
+            755.439,
+            738.382,
+            1335.853,
+            796.638,
+            1114.654
+          ],
+          "errors": 0,
+          "firstError": null,
+          "sample": {
+            "result": [
+              {
+                "id": "000051f8-b98c-4a36-8c37-fe57ba7a76b1",
+                "name": "Bruno Queiroz",
+                "email": "bruno.queiroz.23201@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-01-17T02:41:00.000Z"
+              },
+              {
+                "id": "0006b8cc-841c-419f-8768-4a323b6a5798",
+                "name": "João Barros",
+                "email": "joao.barros.41293@example.com",
+                "city": "Campinas",
+                "createdAt": "2024-01-29T16:13:00.000Z"
+              },
+              {
+                "id": "0009212c-acf9-403b-b650-a4e77767beff",
+                "name": "Marina Almeida",
+                "email": "marina.almeida.2598@example.com",
+                "city": "Curitiba",
+                "createdAt": "2024-01-02T19:18:00.000Z"
+              },
+              {
+                "id": "0010d9c9-51ca-40bf-b49a-4db90eada551",
+                "name": "Iara Esteves",
+                "email": "iara.esteves.28357@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-01-20T16:37:00.000Z"
+              },
+              {
+                "id": "0011cfef-3323-4a17-8a56-19ee1e0ff1cf",
+                "name": "Diego Gomes",
+                "email": "diego.gomes.86629@example.com",
+                "city": "Belém",
+                "createdAt": "2024-03-01T03:49:00.000Z"
+              },
+              {
+                "id": "00124c61-b7f0-49ad-9f23-ae563ff34a5d",
+                "name": "Hugo Esteves",
+                "email": "hugo.esteves.11855@example.com",
+                "city": "Salvador",
+                "createdAt": "2024-01-09T05:35:00.000Z"
+              },
+              {
+                "id": "00149d99-9946-43fc-a479-9e084cddfe77",
+                "name": "Olivia Esteves",
+                "email": "olivia.esteves.8172@example.com",
+                "city": "Manaus",
+                "createdAt": "2024-01-06T16:12:00.000Z"
+              },
+              {
+                "id": "001995bc-7ded-45c4-81df-b260ebe75f5c",
+                "name": "Pedro Oliveira",
+                "email": "pedro.oliveira.47718@example.com",
+                "city": "João Pessoa",
+                "createdAt": "2024-02-03T03:18:00.000Z"
+              },
+              {
+                "id": "001fc66d-1967-47e3-b7ee-f1461c8c10cb",
+                "name": "Olivia Gomes",
+                "email": "olivia.gomes.53867@example.com",
+                "city": "Campinas",
+                "createdAt": "2024-02-07T09:47:00.000Z"
+              },
+              {
+                "id": "0025e9ee-0971-494e-8bd5-b663aa25f2a3",
+                "name": "Sofia Ribeiro",
+                "email": "sofia.ribeiro.2499@example.com",
+                "city": "Curitiba",
+                "createdAt": "2024-01-02T17:39:00.000Z"
+              },
+              {
+                "id": "002904df-0e26-4f4c-936e-33f7cf235848",
+                "name": "Nuno Vieira",
+                "email": "nuno.vieira.65785@example.com",
+                "city": "João Pessoa",
+                "createdAt": "2024-02-15T16:25:00.000Z"
+              },
+              {
+                "id": "002b42e8-ffbd-461c-9d20-866ff200a903",
+                "name": "Pedro Henriques",
+                "email": "pedro.henriques.1437@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-01-01T23:57:00.000Z"
+              },
+              {
+                "id": "002dfac4-45e6-42a6-995f-3b243bcae146",
+                "name": "Ana Gomes",
+                "email": "ana.gomes.71183@example.com",
+                "city": "Natal",
+                "createdAt": "2024-02-19T10:23:00.000Z"
+              },
+              {
+                "id": "002f2d3a-d125-4788-ae2c-ef01ac763416",
+                "name": "Rafael Vieira",
+                "email": "rafael.vieira.45356@example.com",
+                "city": "Natal",
+                "createdAt": "2024-02-01T11:56:00.000Z"
+              },
+              {
+                "id": "00301120-02b2-4f3d-8abf-74c48841a912",
+                "name": "Nuno Queiroz",
+                "email": "nuno.queiroz.5467@example.com",
+                "city": "Maceió",
+                "createdAt": "2024-01-04T19:07:00.000Z"
+              },
+              {
+                "id": "0033705f-9ad0-4af1-8510-99ac5ec388ce",
+                "name": "Gabriela Nunes",
+                "email": "gabriela.nunes.25595@example.com",
+                "city": "Rio de Janeiro",
+                "createdAt": "2024-01-18T18:35:00.000Z"
+              },
+              {
+                "id": "003499a8-57bc-4d94-8bef-af1faf1782df",
+                "name": "João Vieira",
+                "email": "joao.vieira.35245@example.com",
+                "city": "Curitiba",
+                "createdAt": "2024-01-25T11:25:00.000Z"
+              },
+              {
+                "id": "00382071-81a0-4166-93f6-6136a49715bc",
+                "name": "Pedro Henriques",
+                "email": "pedro.henriques.56640@example.com",
+                "city": "São Luís",
+                "createdAt": "2024-02-09T08:00:00.000Z"
+              },
+              {
+                "id": "003b0a36-72cb-44cc-bfab-fe7d4baeed86",
+                "name": "Queila Queiroz",
+                "email": "queila.queiroz.71165@example.com",
+                "city": "Manaus",
+                "createdAt": "2024-02-19T10:05:00.000Z"
+              },
+              {
+                "id": "003de74f-599a-4331-86d8-845be16133f9",
+                "name": "Gabriela Gomes",
+                "email": "gabriela.gomes.86005@example.com",
+                "city": "João Pessoa",
+                "createdAt": "2024-02-29T17:25:00.000Z"
+              },
+              {
+                "id": "00465312-513a-4d3c-85e3-5fb86f83e0b2",
+                "name": "Queila Nunes",
+                "email": "queila.nunes.7634@example.com",
+                "city": "Recife",
+                "createdAt": "2024-01-06T07:14:00.000Z"
+              },
+              {
+                "id": "00469b64-c4b9-4e9d-80c9-000c4ab07991",
+                "name": "Nuno Santos",
+                "email": "nuno.santos.90560@example.com",
+                "city": "Maceió",
+                "createdAt": "2024-03-03T21:20:00.000Z"
+              },
+              {
+                "id": "00504db1-4ae9-49ec-af26-8b5a6f6c9525",
+                "name": "Olivia Ferreira",
+                "email": "olivia.ferreira.13016@example.com",
+                "city": "Brasília",
+                "createdAt": "2024-01-10T00:56:00.000Z"
+              },
+              {
+                "id": "00557df8-db56-4797-9634-efcf7816c4aa",
+                "name": "Carla Cardoso",
+                "email": "carla.cardoso.15177@example.com",
+                "city": "Teresina",
+                "createdAt": "2024-01-11T12:57:00.000Z"
+              },
+              {
+                "id": "0058c2f8-fe56-4931-9423-0f6e7f670582",
+                "name": "Diego Cardoso",
+                "email": "diego.cardoso.78564@example.com",
+                "city": "Salvador",
+                "createdAt": "2024-02-24T13:24:00.000Z"
+              }
+            ],
+            "resultCount": 18590,
+            "truncated": true,
+            "queries": [
+              "MATCH (me:User {id: $id})-[:FOLLOWS*1..6]->(u:User) WHERE u <> me RETURN DISTINCT u ORDER BY u.id  -- params: {\"id\":\"0795c665-f951-4e08-a12a-66bf52b5c8b3\"}"
+            ]
+          }
+        }
+      },
+      "comparison": {
+        "fasterDb": "neo4j",
+        "speedup": 3.406
+      }
+    },
+    {
+      "operation": {
+        "id": "shortestPath",
+        "label": "Shortest path",
+        "category": "traversal",
+        "description": "Fewest-hops follow path between two users.",
+        "uses": [
+          "user",
+          "other",
+          "maxDepth"
+        ]
+      },
+      "request": {
+        "operation": "shortestPath",
+        "runs": 20,
+        "warmup": 3,
+        "depth": 6,
+        "maxDepth": 6,
+        "limit": 10,
+        "budgetMs": 60000
+      },
+      "dataset": {
+        "users": 100000,
+        "posts": 300000,
+        "follows": 1000889
+      },
+      "input": {
+        "user": "0795c665-f951-4e08-a12a-66bf52b5c8b3",
+        "other": "5ef8054e-34c5-4e74-8da3-ab9185b68cdc",
+        "maxDepth": 6
+      },
+      "runsCompleted": 20,
+      "budgetExceeded": false,
+      "equivalence": {
+        "equal": true,
+        "mismatchedRuns": 0,
+        "first": null
+      },
+      "results": {
+        "sqlite": {
+          "timings": {
+            "count": 20,
+            "min": 37.681,
+            "median": 826.673,
+            "mean": 1252.328,
+            "p95": 3097.707,
+            "max": 3165.825
+          },
+          "runsMs": [
+            58.05,
+            157.227,
+            2413.888,
+            797.155,
+            2440.914,
+            1634.656,
+            278.162,
+            59.675,
+            856.191,
+            3097.707,
+            2617.237,
+            1850.794,
+            3165.825,
+            295.394,
+            2184.498,
+            1860.226,
+            37.681,
+            76.774,
+            426.917,
+            737.585
+          ],
+          "errors": 0,
+          "firstError": null,
+          "sample": {
+            "result": null,
+            "resultCount": 0,
+            "truncated": false,
+            "queries": [
+              "WITH RECURSIVE walk(node, depth, path) AS ( SELECT ?, 0, ? UNION ALL SELECT f.followee_id, w.depth + 1, w.path || ',' || f.followee_id FROM walk w JOIN follows f ON f.follower_id = w.node WHERE w.node <> ? AND w.depth < ? AND instr(w.path, f.followee_id) = 0 ) SELECT path, depth FROM walk WHERE node = ? LIMIT 1  -- params: [\"0795c665-f951-4e08-a12a-66bf52b5c8b3\",\"0795c665-f951-4e08-a12a-66bf52b5c8b3\",\"5ef8054e-34c5-4e74-8da3-ab9185b68cdc\",6,\"5ef8054e-34c5-4e74-8da3-ab9185b68cdc\"]",
+              "select `id` from `users` where `id` = ? limit ?  -- params: [\"0795c665-f951-4e08-a12a-66bf52b5c8b3\",1]",
+              "select `id` from `users` where `id` = ? limit ?  -- params: [\"5ef8054e-34c5-4e74-8da3-ab9185b68cdc\",1]"
+            ]
+          }
+        },
+        "neo4j": {
+          "timings": {
+            "count": 20,
+            "min": 2.475,
+            "median": 9.234,
+            "mean": 8.734,
+            "p95": 14.118,
+            "max": 15.806
+          },
+          "runsMs": [
+            5.943,
+            13.494,
+            2.616,
+            14.118,
+            3.793,
+            13.742,
+            2.708,
+            13.726,
+            3.128,
+            13.689,
+            2.503,
+            13.856,
+            2.475,
+            15.806,
+            5.083,
+            13.739,
+            2.756,
+            13.176,
+            5.816,
+            12.525
+          ],
+          "errors": 0,
+          "firstError": null,
+          "sample": {
+            "result": null,
+            "resultCount": 0,
+            "truncated": false,
+            "queries": [
+              "MATCH (a:User {id: $from}), (b:User {id: $to}) MATCH p = shortestPath((a)-[:FOLLOWS*1..6]->(b)) RETURN [n IN nodes(p) | n.id] AS path, length(p) AS hops  -- params: {\"from\":\"0795c665-f951-4e08-a12a-66bf52b5c8b3\",\"to\":\"5ef8054e-34c5-4e74-8da3-ab9185b68cdc\"}",
+              "MATCH (u:User {id: $id}) RETURN u.id AS id  -- params: {\"id\":\"0795c665-f951-4e08-a12a-66bf52b5c8b3\"}",
+              "MATCH (u:User {id: $id}) RETURN u.id AS id  -- params: {\"id\":\"5ef8054e-34c5-4e74-8da3-ab9185b68cdc\"}"
+            ]
+          }
+        }
+      },
+      "comparison": {
+        "fasterDb": "neo4j",
+        "speedup": 89.525
+      }
+    },
+    {
+      "operation": {
+        "id": "recommend",
+        "label": "Recommendations",
+        "category": "traversal",
+        "description": "Friends-of-friends not yet followed, ranked by mutual connections.",
+        "uses": [
+          "user",
+          "limit"
+        ]
+      },
+      "request": {
+        "operation": "recommend",
+        "runs": 20,
+        "warmup": 3,
+        "depth": 6,
+        "maxDepth": 6,
+        "limit": 10,
+        "budgetMs": 60000
+      },
+      "dataset": {
+        "users": 100000,
+        "posts": 300000,
+        "follows": 1000889
+      },
+      "input": {
+        "user": "0795c665-f951-4e08-a12a-66bf52b5c8b3",
+        "limit": 10
+      },
+      "runsCompleted": 20,
+      "budgetExceeded": false,
+      "equivalence": {
+        "equal": true,
+        "mismatchedRuns": 0,
+        "first": null
+      },
+      "results": {
+        "sqlite": {
+          "timings": {
+            "count": 20,
+            "min": 0.283,
+            "median": 1.095,
+            "mean": 1.102,
+            "p95": 1.672,
+            "max": 1.871
+          },
+          "runsMs": [
+            0.283,
+            0.759,
+            1.871,
+            1.065,
+            1.295,
+            0.772,
+            1.02,
+            0.737,
+            1.178,
+            1.607,
+            1.189,
+            0.917,
+            1.652,
+            1.644,
+            1.124,
+            0.968,
+            1.672,
+            1.507,
+            0.443,
+            0.348
+          ],
+          "errors": 0,
+          "firstError": null,
+          "sample": {
+            "result": [
+              {
+                "user": {
+                  "id": "9834f5d9-bf07-466a-a910-17f0ad32323c",
+                  "name": "Iara Dias",
+                  "email": "iara.dias.81875@example.com",
+                  "city": "São Luís",
+                  "createdAt": "2024-02-26T20:35:00.000Z"
+                },
+                "mutualCount": 1
+              }
+            ],
+            "resultCount": 1,
+            "truncated": false,
+            "queries": [
+              "SELECT u.*, COUNT(*) AS mutual_count FROM follows f1 JOIN follows f2 ON f2.follower_id = f1.followee_id JOIN users u ON u.id = f2.followee_id WHERE f1.follower_id = ? AND f2.followee_id <> ? AND NOT EXISTS (SELECT 1 FROM follows f3 WHERE f3.follower_id = ? AND f3.followee_id = f2.followee_id) GROUP BY u.id ORDER BY mutual_count DESC, u.id LIMIT ?  -- params: [\"0795c665-f951-4e08-a12a-66bf52b5c8b3\",\"0795c665-f951-4e08-a12a-66bf52b5c8b3\",\"0795c665-f951-4e08-a12a-66bf52b5c8b3\",10]"
+            ]
+          }
+        },
+        "neo4j": {
+          "timings": {
+            "count": 20,
+            "min": 1.763,
+            "median": 2.015,
+            "mean": 2.107,
+            "p95": 2.557,
+            "max": 2.845
+          },
+          "runsMs": [
+            2.059,
+            2.845,
+            2.375,
+            2.557,
+            1.834,
+            1.82,
+            1.987,
+            1.932,
+            1.95,
+            2.135,
+            1.883,
+            1.989,
+            1.987,
+            2.553,
+            2.253,
+            2.041,
+            2.191,
+            2.187,
+            1.763,
+            1.805
+          ],
+          "errors": 0,
+          "firstError": null,
+          "sample": {
+            "result": [
+              {
+                "user": {
+                  "id": "9834f5d9-bf07-466a-a910-17f0ad32323c",
+                  "name": "Iara Dias",
+                  "email": "iara.dias.81875@example.com",
+                  "city": "São Luís",
+                  "createdAt": "2024-02-26T20:35:00.000Z"
+                },
+                "mutualCount": 1
+              }
+            ],
+            "resultCount": 1,
+            "truncated": false,
+            "queries": [
+              "MATCH (me:User {id: $id})-[:FOLLOWS]->(:User)-[:FOLLOWS]->(u:User) WHERE u <> me AND NOT (me)-[:FOLLOWS]->(u) RETURN u, count(*) AS mutualCount ORDER BY mutualCount DESC, u.id LIMIT $limit  -- params: {\"id\":\"0795c665-f951-4e08-a12a-66bf52b5c8b3\",\"limit\":{\"low\":10,\"high\":0}}"
+            ]
+          }
+        }
+      },
+      "comparison": {
+        "fasterDb": "sqlite",
+        "speedup": 1.84
+      }
+    }
+  ]
+}

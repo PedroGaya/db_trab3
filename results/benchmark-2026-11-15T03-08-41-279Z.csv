@@ -1,0 +1,4 @@
+operation,category,sqlite median ms,neo4j median ms,sqlite p95 ms,neo4j p95 ms,faster,speedup,equal,errors
+reachable,traversal,2701.888,793.34,3868.407,1389.174,neo4j,3.406,yes,0
+shortestPath,traversal,826.673,9.234,3097.707,14.118,neo4j,89.525,yes,0
+recommend,traversal,1.095,2.015,1.672,2.557,sqlite,1.84,yes,0
