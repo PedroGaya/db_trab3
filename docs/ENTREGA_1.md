@@ -26,7 +26,11 @@ O Neo4j disponibiliza técnicas padrão de escalabilidade, como **clusters e rep
 
 **Detecção de fraude e risco.** O paradigma de grafos é usado para identificar padrões de conluio e redes de transações anômalas, um tipo de análise em que a estrutura das conexões importa tanto quanto os valores individuais.
 
-## Comparativos
+## Resultados
+
+**SQLite** _ganha_ em consultas simples de usuário (`getUser` 15,3x), agregações (`usersPerCity` 5,85x; `topFollowed` 1,11x), multi-salto limitado (`mutualFollows` 7,04x) e, sobretudo, escritas (`createUser` 38,2x; `follow` 48,8x; `deleteUser` 28,9x). Também é mais rápido na carga de usuários e posts. Já perde em travessias profundas e caminhos mínimos (`shortestPath` 87,3x mais lento; `reachable` prof. 3 2,68x mais lento), pior latência de cauda e crescimento muito mais acentuado com escala (`shortestPath`: 125,46x vs. 3,31x).
+
+Por consequência, **Neo4j** _ganha_ em travessias profundas (`shortestPath` 87,3x; `reachable` prof. 3 2,68x; prof. 6 2,04x), `timeline` 1,96x, carga de `follows` 1,66x e tempo total de carga 1,39x. Escala muito melhor em consultas gráficas e menor latência de cauda. Escritas e consultas simples/agregações são bem mais lentas, além de carga de usuários/posts inferior.
 
 | Dimensão             | Métrica                                                      |      SQLite |         Neo4j | Unidade  | Vencedor |  Razão |
 | -------------------- | ------------------------------------------------------------ | ----------: | ------------: | -------- | -------- | -----: |
