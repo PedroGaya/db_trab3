@@ -20,9 +20,14 @@ export interface SuiteOptions {
   limit: number;
   ops: OperationId[];
   outDir: string;
+  tag?: string;
+  // Per-operation time budget.
+  budgetMs?: number;
 }
 
 export interface SuiteOutcome {
+  benchmarks: BenchmarkResult[];
+  seeded: SeedResult | null;
   rows: Record<string, string | number>[];
   mismatches: number;
   files: { json: string; csv: string };
@@ -51,6 +56,7 @@ export async function runSuite(
         warmup: opts.warmup,
         depth: opts.depth,
         limit: opts.limit,
+        budgetMs: opts.budgetMs,
       }),
     );
     console.log(
@@ -94,8 +100,9 @@ export async function runSuite(
 
   mkdirSync(opts.outDir, { recursive: true });
   const stamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const json = path.join(opts.outDir, `benchmark-${stamp}.json`);
-  const csv = path.join(opts.outDir, `benchmark-${stamp}.csv`);
+  const base = `benchmark-${opts.tag ? `${opts.tag}-` : ""}${stamp}`;
+  const json = path.join(opts.outDir, `${base}.json`);
+  const csv = path.join(opts.outDir, `${base}.csv`);
   writeFileSync(
     json,
     JSON.stringify(
@@ -118,7 +125,13 @@ export async function runSuite(
     ].join("\n") + "\n",
   );
 
-  return { rows, mismatches: mismatches.length, files: { json, csv } };
+  return {
+    benchmarks,
+    seeded,
+    rows,
+    mismatches: mismatches.length,
+    files: { json, csv },
+  };
 }
 
 const USAGE = `Usage: bun run benchmark [options]
@@ -133,13 +146,14 @@ const USAGE = `Usage: bun run benchmark [options]
   --depth N         hops for 'reachable' (default 3)
   --limit N         result limit for timeline/recommend/topFollowed (default 10)
   --ops a,b,c       only these operations (default: all)
+  --budget N        seconds per operation before it stops starting new runs (default 60)
   --wait N          seconds to wait for Neo4j to come up (default 90)
   --help
 `;
 
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-async function initWithRetry(
+export async function initWithRetry(
   stores: Stores,
   waitSeconds: number,
 ): Promise<void> {
@@ -173,6 +187,7 @@ async function main() {
       limit: { type: "string" },
       ops: { type: "string" },
       wait: { type: "string" },
+      budget: { type: "string" },
       help: { type: "boolean" },
     },
   });
@@ -217,6 +232,7 @@ async function main() {
       depth: bench.depth,
       limit: bench.limit,
       ops,
+      budgetMs: values.budget ? Number(values.budget) * 1000 : undefined,
       outDir: path.resolve(import.meta.dir, "../../../results"),
     });
     console.log(`\nSaved: ${outcome.files.json}\n       ${outcome.files.csv}`);

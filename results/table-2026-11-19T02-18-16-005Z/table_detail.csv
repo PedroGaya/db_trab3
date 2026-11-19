@@ -1,0 +1,195 @@
+dimension,metric,dataset,sqlite,neo4j,unit,winner,ratio
+Query speed (point),getUser median,1000 users,0.152,3.682,ms,sqlite,24.22
+Query speed (point),getUser p95,1000 users,0.301,5.733,ms,sqlite,19.05
+Query speed (point),getUser p95 / median,1000 users,1.98,1.56,×,neo4j,1.27
+Query speed (point),getUser result rows,1000 users,1,1,rows,,
+Query speed (traversal),following median,1000 users,0.142,3.398,ms,sqlite,23.93
+Query speed (traversal),following p95,1000 users,0.281,6.467,ms,sqlite,23.01
+Query speed (traversal),following p95 / median,1000 users,1.98,1.9,×,neo4j,1.04
+Query speed (traversal),following result rows,1000 users,11,11,rows,,
+Query speed (traversal),followers median,1000 users,0.142,3.091,ms,sqlite,21.77
+Query speed (traversal),followers p95,1000 users,0.268,4.996,ms,sqlite,18.64
+Query speed (traversal),followers p95 / median,1000 users,1.89,1.62,×,neo4j,1.17
+Query speed (traversal),followers result rows,1000 users,6,6,rows,,
+Query speed (traversal),mutualFollows median,1000 users,0.211,6.729,ms,sqlite,31.89
+Query speed (traversal),mutualFollows p95,1000 users,0.418,10.844,ms,sqlite,25.94
+Query speed (traversal),mutualFollows p95 / median,1000 users,1.98,1.61,×,neo4j,1.23
+Query speed (traversal),mutualFollows result rows,1000 users,0,0,rows,,
+Query speed (traversal),timeline median,1000 users,0.167,2.631,ms,sqlite,15.75
+Query speed (traversal),timeline p95,1000 users,0.33,5.551,ms,sqlite,16.82
+Query speed (traversal),timeline p95 / median,1000 users,1.98,2.11,×,sqlite,1.07
+Query speed (traversal),timeline result rows,1000 users,10,10,rows,,
+Query speed (traversal),reachable (depth 3) median,1000 users,1.859,7.798,ms,sqlite,4.19
+Query speed (traversal),reachable (depth 3) p95,1000 users,3.277,12.728,ms,sqlite,3.88
+Query speed (traversal),reachable (depth 3) p95 / median,1000 users,1.76,1.63,×,neo4j,1.08
+Query speed (traversal),reachable (depth 3) result rows,1000 users,655,655,rows,,
+Query speed (traversal),shortestPath (max 6 hops) median,1000 users,6.035,2.618,ms,neo4j,2.31
+Query speed (traversal),shortestPath (max 6 hops) p95,1000 users,28.949,5.969,ms,neo4j,4.85
+Query speed (traversal),shortestPath (max 6 hops) p95 / median,1000 users,4.8,2.28,×,neo4j,2.11
+Query speed (traversal),shortestPath (max 6 hops) result rows,1000 users,1,1,rows,,
+Query speed (traversal),recommend median,1000 users,0.265,2.304,ms,sqlite,8.69
+Query speed (traversal),recommend p95,1000 users,0.359,3.613,ms,sqlite,10.06
+Query speed (traversal),recommend p95 / median,1000 users,1.35,1.57,×,sqlite,1.16
+Query speed (traversal),recommend result rows,1000 users,10,10,rows,,
+Query speed (aggregate),usersPerCity median,1000 users,0.103,2.14,ms,sqlite,20.78
+Query speed (aggregate),usersPerCity p95,1000 users,0.129,2.894,ms,sqlite,22.43
+Query speed (aggregate),usersPerCity p95 / median,1000 users,1.25,1.35,×,sqlite,1.08
+Query speed (aggregate),usersPerCity result rows,1000 users,20,20,rows,,
+Query speed (aggregate),topFollowed median,1000 users,1.019,5.375,ms,sqlite,5.27
+Query speed (aggregate),topFollowed p95,1000 users,1.593,9.938,ms,sqlite,6.24
+Query speed (aggregate),topFollowed p95 / median,1000 users,1.56,1.85,×,sqlite,1.19
+Query speed (aggregate),topFollowed result rows,1000 users,10,10,rows,,
+Bulk load,load users,1000 users,88496,2943,rows/s,sqlite,30.07
+Bulk load,load posts,1000 users,37927,5206,rows/s,sqlite,7.29
+Bulk load,load follows,1000 users,159377,10008,rows/s,sqlite,15.92
+Bulk load,load total time,1000 users,154.6,1938.5,ms,sqlite,12.54
+Writes,createUser median,1000 users,0.075,3.725,ms,sqlite,49.67
+Writes,follow median,1000 users,0.057,3.541,ms,sqlite,62.12
+Writes,createPost median,1000 users,0.051,3.313,ms,sqlite,64.96
+Writes,deleteUser (cascade) median,1000 users,0.089,3.655,ms,sqlite,41.07
+Storage footprint,on-disk size (store files),1000 users,346.09,280.5,MB,neo4j,1.23
+Storage footprint,neo4j transaction logs,1000 users,,1074.89,MB,,
+Query speed (point),getUser median,10000 users,0.079,1.434,ms,sqlite,18.15
+Query speed (point),getUser p95,10000 users,0.122,1.749,ms,sqlite,14.34
+Query speed (point),getUser p95 / median,10000 users,1.54,1.22,×,neo4j,1.26
+Query speed (point),getUser result rows,10000 users,1,1,rows,,
+Query speed (traversal),following median,10000 users,0.135,1.625,ms,sqlite,12.04
+Query speed (traversal),following p95,10000 users,0.246,3.031,ms,sqlite,12.32
+Query speed (traversal),following p95 / median,10000 users,1.82,1.87,×,sqlite,1.03
+Query speed (traversal),following result rows,10000 users,16,16,rows,,
+Query speed (traversal),followers median,10000 users,0.147,1.522,ms,sqlite,10.35
+Query speed (traversal),followers p95,10000 users,0.274,1.877,ms,sqlite,6.85
+Query speed (traversal),followers p95 / median,10000 users,1.86,1.23,×,neo4j,1.51
+Query speed (traversal),followers result rows,10000 users,8,8,rows,,
+Query speed (traversal),mutualFollows median,10000 users,0.183,4.021,ms,sqlite,21.97
+Query speed (traversal),mutualFollows p95,10000 users,0.314,4.833,ms,sqlite,15.39
+Query speed (traversal),mutualFollows p95 / median,10000 users,1.72,1.2,×,neo4j,1.43
+Query speed (traversal),mutualFollows result rows,10000 users,0,0,rows,,
+Query speed (traversal),timeline median,10000 users,0.202,1.691,ms,sqlite,8.37
+Query speed (traversal),timeline p95,10000 users,0.282,2.058,ms,sqlite,7.3
+Query speed (traversal),timeline p95 / median,10000 users,1.4,1.22,×,neo4j,1.15
+Query speed (traversal),timeline result rows,10000 users,10,10,rows,,
+Query speed (traversal),reachable (depth 3) median,10000 users,4.873,9.114,ms,sqlite,1.87
+Query speed (traversal),reachable (depth 3) p95,10000 users,7.459,14.38,ms,sqlite,1.93
+Query speed (traversal),reachable (depth 3) p95 / median,10000 users,1.53,1.58,×,sqlite,1.03
+Query speed (traversal),reachable (depth 3) result rows,10000 users,1450,1450,rows,,
+Query speed (traversal),shortestPath (max 6 hops) median,10000 users,83.556,2.795,ms,neo4j,29.89
+Query speed (traversal),shortestPath (max 6 hops) p95,10000 users,1880.934,11.851,ms,neo4j,158.72
+Query speed (traversal),shortestPath (max 6 hops) p95 / median,10000 users,22.51,4.24,×,neo4j,5.31
+Query speed (traversal),shortestPath (max 6 hops) result rows,10000 users,1,1,rows,,
+Query speed (traversal),recommend median,10000 users,0.557,1.908,ms,sqlite,3.43
+Query speed (traversal),recommend p95,10000 users,0.759,3.025,ms,sqlite,3.99
+Query speed (traversal),recommend p95 / median,10000 users,1.36,1.59,×,sqlite,1.17
+Query speed (traversal),recommend result rows,10000 users,10,10,rows,,
+Query speed (aggregate),usersPerCity median,10000 users,0.337,3.932,ms,sqlite,11.67
+Query speed (aggregate),usersPerCity p95,10000 users,0.426,4.447,ms,sqlite,10.44
+Query speed (aggregate),usersPerCity p95 / median,10000 users,1.26,1.13,×,neo4j,1.12
+Query speed (aggregate),usersPerCity result rows,10000 users,20,20,rows,,
+Query speed (aggregate),topFollowed median,10000 users,13.388,28.854,ms,sqlite,2.16
+Query speed (aggregate),topFollowed p95,10000 users,14.048,41.986,ms,sqlite,2.99
+Query speed (aggregate),topFollowed p95 / median,10000 users,1.05,1.46,×,sqlite,1.39
+Query speed (aggregate),topFollowed result rows,10000 users,10,10,rows,,
+Bulk load,load users,10000 users,126422,14961,rows/s,sqlite,8.45
+Bulk load,load posts,10000 users,65118,17214,rows/s,sqlite,3.78
+Bulk load,load follows,10000 users,51998,18194,rows/s,sqlite,2.86
+Bulk load,load total time,10000 users,2448.8,7867,ms,sqlite,3.21
+Writes,createUser median,10000 users,0.075,3.012,ms,sqlite,40.16
+Writes,follow median,10000 users,0.053,3.055,ms,sqlite,57.64
+Writes,createPost median,10000 users,0.108,2.986,ms,sqlite,27.65
+Writes,deleteUser (cascade) median,10000 users,0.106,3.326,ms,sqlite,31.38
+Storage footprint,on-disk size (store files),10000 users,346.09,280.84,MB,neo4j,1.23
+Storage footprint,neo4j transaction logs,10000 users,,1074.89,MB,,
+Query speed (point),getUser median,100000 users,0.09,1.376,ms,sqlite,15.29
+Query speed (point),getUser p95,100000 users,0.155,1.54,ms,sqlite,9.94
+Query speed (point),getUser p95 / median,100000 users,1.72,1.12,×,neo4j,1.54
+Query speed (point),getUser result rows,100000 users,1,1,rows,,
+Query speed (traversal),following median,100000 users,1.69,1.918,ms,sqlite,1.13
+Query speed (traversal),following p95,100000 users,3.104,3.127,ms,sqlite,1.01
+Query speed (traversal),following p95 / median,100000 users,1.84,1.63,×,neo4j,1.13
+Query speed (traversal),following result rows,100000 users,1,1,rows,,
+Query speed (traversal),followers median,100000 users,1.736,1.39,ms,neo4j,1.25
+Query speed (traversal),followers p95,100000 users,3.826,1.984,ms,neo4j,1.93
+Query speed (traversal),followers p95 / median,100000 users,2.2,1.43,×,neo4j,1.54
+Query speed (traversal),followers result rows,100000 users,5,5,rows,,
+Query speed (traversal),mutualFollows median,100000 users,0.545,3.838,ms,sqlite,7.04
+Query speed (traversal),mutualFollows p95,100000 users,0.803,5.646,ms,sqlite,7.03
+Query speed (traversal),mutualFollows p95 / median,100000 users,1.47,1.47,×,tie,
+Query speed (traversal),mutualFollows result rows,100000 users,0,0,rows,,
+Query speed (traversal),timeline median,100000 users,3.246,1.657,ms,neo4j,1.96
+Query speed (traversal),timeline p95,100000 users,7.168,11.886,ms,sqlite,1.66
+Query speed (traversal),timeline p95 / median,100000 users,2.21,7.17,×,sqlite,3.24
+Query speed (traversal),timeline result rows,100000 users,3,3,rows,,
+Query speed (traversal),reachable (depth 3) median,100000 users,30.496,11.399,ms,neo4j,2.68
+Query speed (traversal),reachable (depth 3) p95,100000 users,52.859,21.837,ms,neo4j,2.42
+Query speed (traversal),reachable (depth 3) p95 / median,100000 users,1.73,1.92,×,sqlite,1.11
+Query speed (traversal),reachable (depth 3) result rows,100000 users,20,20,rows,,
+Query speed (traversal),shortestPath (max 6 hops) median,100000 users,757.136,8.672,ms,neo4j,87.31
+Query speed (traversal),shortestPath (max 6 hops) p95,100000 users,3182.777,13.067,ms,neo4j,243.57
+Query speed (traversal),shortestPath (max 6 hops) p95 / median,100000 users,4.2,1.51,×,neo4j,2.78
+Query speed (traversal),shortestPath (max 6 hops) result rows,100000 users,0,0,rows,,
+Query speed (traversal),recommend median,100000 users,1.087,1.81,ms,sqlite,1.67
+Query speed (traversal),recommend p95,100000 users,1.934,2.445,ms,sqlite,1.26
+Query speed (traversal),recommend p95 / median,100000 users,1.78,1.35,×,neo4j,1.32
+Query speed (traversal),recommend result rows,100000 users,1,1,rows,,
+Query speed (aggregate),usersPerCity median,100000 users,4.144,24.231,ms,sqlite,5.85
+Query speed (aggregate),usersPerCity p95,100000 users,4.674,27.898,ms,sqlite,5.97
+Query speed (aggregate),usersPerCity p95 / median,100000 users,1.13,1.15,×,sqlite,1.02
+Query speed (aggregate),usersPerCity result rows,100000 users,20,20,rows,,
+Query speed (aggregate),topFollowed median,100000 users,377.248,417.403,ms,sqlite,1.11
+Query speed (aggregate),topFollowed p95,100000 users,400.219,475.771,ms,sqlite,1.19
+Query speed (aggregate),topFollowed p95 / median,100000 users,1.06,1.14,×,sqlite,1.08
+Query speed (aggregate),topFollowed result rows,100000 users,10,10,rows,,
+Bulk load,load users,100000 users,22649,16859,rows/s,sqlite,1.34
+Bulk load,load posts,100000 users,26215,20324,rows/s,sqlite,1.29
+Bulk load,load follows,100000 users,12497,20800,rows/s,neo4j,1.66
+Bulk load,load total time,100000 users,95950.9,68813.5,ms,neo4j,1.39
+Writes,createUser median,100000 users,0.073,2.785,ms,sqlite,38.15
+Writes,follow median,100000 users,0.058,2.83,ms,sqlite,48.79
+Writes,createPost median,100000 users,0.323,2.828,ms,sqlite,8.76
+Writes,deleteUser (cascade) median,100000 users,0.122,3.528,ms,sqlite,28.92
+Storage footprint,on-disk size (store files),100000 users,346.09,283.95,MB,neo4j,1.22
+Storage footprint,neo4j transaction logs,100000 users,,1587.46,MB,,
+Deep traversal by depth,reachable (depth 1) median,100000 users,0.393,1.728,ms,sqlite,4.4
+Deep traversal by depth,reachable (depth 1) p95,100000 users,1.371,3.993,ms,sqlite,2.91
+Deep traversal by depth,reachable (depth 1) result rows,100000 users,16,16,rows,,
+Deep traversal by depth,reachable (depth 2) median,100000 users,1.135,2.33,ms,sqlite,2.05
+Deep traversal by depth,reachable (depth 2) p95,100000 users,2.149,4.421,ms,sqlite,2.06
+Deep traversal by depth,reachable (depth 2) result rows,100000 users,168,168,rows,,
+Deep traversal by depth,reachable (depth 3) median,100000 users,6.878,6.492,ms,neo4j,1.06
+Deep traversal by depth,reachable (depth 3) p95,100000 users,18.696,11.002,ms,neo4j,1.7
+Deep traversal by depth,reachable (depth 3) result rows,100000 users,1692,1692,rows,,
+Deep traversal by depth,reachable (depth 4) median,100000 users,51.652,47.794,ms,neo4j,1.08
+Deep traversal by depth,reachable (depth 4) p95,100000 users,98.893,379.182,ms,sqlite,3.83
+Deep traversal by depth,reachable (depth 4) result rows,100000 users,14257,14257,rows,,
+Deep traversal by depth,reachable (depth 5) median,100000 users,384.842,290.435,ms,neo4j,1.33
+Deep traversal by depth,reachable (depth 5) p95,100000 users,766.701,493.141,ms,neo4j,1.55
+Deep traversal by depth,reachable (depth 5) result rows,100000 users,67464,67464,rows,,
+Deep traversal by depth,reachable (depth 6) median,100000 users,2066.264,1012.354,ms,neo4j,2.04
+Deep traversal by depth,reachable (depth 6) p95,100000 users,3870.493,1337.311,ms,neo4j,2.89
+Deep traversal by depth,reachable (depth 6) result rows,100000 users,98866,98866,rows,,
+Query complexity,getUser statements,-,1,1,count,tie,
+Query complexity,getUser size,-,10,6,tokens,neo4j,1.67
+Query complexity,following statements,-,1,1,count,tie,
+Query complexity,following size,-,19,9,tokens,neo4j,2.11
+Query complexity,followers statements,-,1,1,count,tie,
+Query complexity,followers size,-,19,9,tokens,neo4j,2.11
+Query complexity,mutualFollows statements,-,3,3,count,tie,
+Query complexity,mutualFollows size,-,50,27,tokens,neo4j,1.85
+Query complexity,timeline statements,-,1,1,count,tie,
+Query complexity,timeline size,-,23,16,tokens,neo4j,1.44
+Query complexity,reachable statements,-,1,1,count,tie,
+Query complexity,reachable size,-,53,14,tokens,neo4j,3.79
+Query complexity,shortestPath statements,-,3,3,count,tie,
+Query complexity,shortestPath size,-,78,38,tokens,neo4j,2.05
+Query complexity,recommend statements,-,1,1,count,tie,
+Query complexity,recommend size,-,56,23,tokens,neo4j,2.43
+Query complexity,usersPerCity statements,-,1,1,count,tie,
+Query complexity,usersPerCity size,-,15,14,tokens,neo4j,1.07
+Query complexity,topFollowed statements,-,1,1,count,tie,
+Query complexity,topFollowed size,-,25,14,tokens,neo4j,1.79
+Startup,time until ready,-,15.894,5175.828,ms,sqlite,325.65
+Scaling with data size,getUser median growth,1000 → 100000 users,0.59,0.37,×,neo4j,1.59
+Scaling with data size,recommend median growth,1000 → 100000 users,4.1,0.79,×,neo4j,5.19
+Scaling with data size,usersPerCity median growth,1000 → 100000 users,40.23,11.32,×,neo4j,3.55
+Scaling with data size,reachable median growth,1000 → 100000 users,16.4,1.46,×,neo4j,11.23
+Scaling with data size,shortestPath median growth,1000 → 100000 users,125.46,3.31,×,neo4j,37.9

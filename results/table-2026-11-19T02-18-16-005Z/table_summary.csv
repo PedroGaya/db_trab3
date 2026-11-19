@@ -1,0 +1,33 @@
+dimension,metric,dataset,sqlite,neo4j,unit,winner,ratio
+Point lookups & 1-hop,getUser median,100000 users,0.09,1.376,ms,sqlite,15.29
+Point lookups & 1-hop,following median,100000 users,1.69,1.918,ms,sqlite,1.13
+Point lookups & 1-hop,followers median,100000 users,1.736,1.39,ms,neo4j,1.25
+Aggregates,usersPerCity median,100000 users,4.144,24.231,ms,sqlite,5.85
+Aggregates,topFollowed median,100000 users,377.248,417.403,ms,sqlite,1.11
+Bounded multi-hop,recommend median,100000 users,1.087,1.81,ms,sqlite,1.67
+Bounded multi-hop,mutualFollows median,100000 users,0.545,3.838,ms,sqlite,7.04
+Bounded multi-hop,timeline median,100000 users,3.246,1.657,ms,neo4j,1.96
+Deep traversal,reachable (depth 3) median,100000 users,30.496,11.399,ms,neo4j,2.68
+Deep traversal,shortestPath (max 6 hops) median,100000 users,757.136,8.672,ms,neo4j,87.31
+Deep traversal,reachable (depth 6) median,100000 users,2066.264,1012.354,ms,neo4j,2.04
+Tail latency,shortestPath (max 6 hops) p95 / median,100000 users,4.2,1.51,×,neo4j,2.78
+Tail latency,recommend p95 / median,100000 users,1.78,1.35,×,neo4j,1.32
+Tail latency,reachable (depth 6) p95 / median,100000 users,1.87,1.32,×,neo4j,1.42
+Bulk load,load users,100000 users,22649,16859,rows/s,sqlite,1.34
+Bulk load,load posts,100000 users,26215,20324,rows/s,sqlite,1.29
+Bulk load,load follows,100000 users,12497,20800,rows/s,neo4j,1.66
+Bulk load,load total time,100000 users,95950.9,68813.5,ms,neo4j,1.39
+Writes,createUser median,100000 users,0.073,2.785,ms,sqlite,38.15
+Writes,follow median,100000 users,0.058,2.83,ms,sqlite,48.79
+Writes,createPost median,100000 users,0.323,2.828,ms,sqlite,8.76
+Writes,deleteUser (cascade) median,100000 users,0.122,3.528,ms,sqlite,28.92
+Storage footprint,on-disk size (store files),100000 users,346.09,283.95,MB,neo4j,1.22
+Startup,time until ready,-,15.894,5175.828,ms,sqlite,325.65
+Query complexity,shortestPath size,-,78,38,tokens,neo4j,2.05
+Query complexity,recommend size,-,56,23,tokens,neo4j,2.43
+Query complexity,reachable size,-,53,14,tokens,neo4j,3.79
+Scaling with data size,getUser median growth,1000 → 100000 users,0.59,0.37,×,neo4j,1.59
+Scaling with data size,recommend median growth,1000 → 100000 users,4.1,0.79,×,neo4j,5.19
+Scaling with data size,usersPerCity median growth,1000 → 100000 users,40.23,11.32,×,neo4j,3.55
+Scaling with data size,reachable median growth,1000 → 100000 users,16.4,1.46,×,neo4j,11.23
+Scaling with data size,shortestPath median growth,1000 → 100000 users,125.46,3.31,×,neo4j,37.9

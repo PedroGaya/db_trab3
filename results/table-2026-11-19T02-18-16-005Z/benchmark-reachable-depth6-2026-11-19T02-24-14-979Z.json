@@ -1,0 +1,478 @@
+{
+  "generatedAt": "2026-11-19T02:24:14.979Z",
+  "seed": null,
+  "options": {
+    "seed": null,
+    "runs": 10,
+    "warmup": 1,
+    "depth": 6,
+    "limit": 10,
+    "ops": [
+      "reachable"
+    ],
+    "outDir": "C:\\Users\\pedro\\git\\temp\\db_trab3\\results\\table-2026-11-19T02-18-16-005Z",
+    "tag": "reachable-depth6",
+    "budgetMs": 180000
+  },
+  "benchmarks": [
+    {
+      "operation": {
+        "id": "reachable",
+        "label": "Reachable within N hops",
+        "category": "traversal",
+        "description": "Everyone reachable by following up to `depth` hops out.",
+        "uses": [
+          "user",
+          "depth"
+        ]
+      },
+      "request": {
+        "operation": "reachable",
+        "runs": 10,
+        "warmup": 1,
+        "depth": 6,
+        "maxDepth": 6,
+        "limit": 10,
+        "budgetMs": 180000
+      },
+      "dataset": {
+        "users": 100000,
+        "posts": 300000,
+        "follows": 1000889
+      },
+      "input": {
+        "user": "0290dfeb-0b84-4545-a041-34d36db0c956",
+        "depth": 6
+      },
+      "runsCompleted": 10,
+      "budgetExceeded": false,
+      "equivalence": {
+        "equal": true,
+        "mismatchedRuns": 0,
+        "first": null
+      },
+      "results": {
+        "sqlite": {
+          "timings": {
+            "count": 10,
+            "min": 120.485,
+            "median": 2066.264,
+            "mean": 2251.97,
+            "p95": 3870.493,
+            "max": 3870.493
+          },
+          "runsMs": [
+            3256.838,
+            1456.148,
+            120.485,
+            1901.647,
+            3323.2,
+            3870.493,
+            2576.054,
+            2080.735,
+            2051.793,
+            1882.313
+          ],
+          "errors": 0,
+          "firstError": null,
+          "sample": {
+            "result": [
+              {
+                "id": "000051f8-b98c-4a36-8c37-fe57ba7a76b1",
+                "name": "Bruno Queiroz",
+                "email": "bruno.queiroz.23201@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-01-17T02:41:00.000Z"
+              },
+              {
+                "id": "000072d9-ea06-4455-aa26-965c5d52ba51",
+                "name": "Ana Gomes",
+                "email": "ana.gomes.68555@example.com",
+                "city": "Rio de Janeiro",
+                "createdAt": "2024-02-17T14:35:00.000Z"
+              },
+              {
+                "id": "0001a81d-b095-417b-8894-ac27451277fa",
+                "name": "Ana Lima",
+                "email": "ana.lima.45181@example.com",
+                "city": "Brasília",
+                "createdAt": "2024-02-01T09:01:00.000Z"
+              },
+              {
+                "id": "0002ec34-d881-4b16-be17-fa1ecb35ec92",
+                "name": "Queila Pereira",
+                "email": "queila.pereira.57516@example.com",
+                "city": "Vitória",
+                "createdAt": "2024-02-09T22:36:00.000Z"
+              },
+              {
+                "id": "00053d33-bf28-4bb8-9cc8-1ed46415a939",
+                "name": "Felipe Santos",
+                "email": "felipe.santos.33176@example.com",
+                "city": "Belém",
+                "createdAt": "2024-01-24T00:56:00.000Z"
+              },
+              {
+                "id": "0006b8cc-841c-419f-8768-4a323b6a5798",
+                "name": "João Barros",
+                "email": "joao.barros.41293@example.com",
+                "city": "Campinas",
+                "createdAt": "2024-01-29T16:13:00.000Z"
+              },
+              {
+                "id": "0008ab9e-a2c0-4d39-9ce3-aedc6408f34f",
+                "name": "Olivia Vieira",
+                "email": "olivia.vieira.82474@example.com",
+                "city": "Curitiba",
+                "createdAt": "2024-02-27T06:34:00.000Z"
+              },
+              {
+                "id": "0008e496-d12c-4f24-847f-d1c35277f931",
+                "name": "Marina Pereira",
+                "email": "marina.pereira.80167@example.com",
+                "city": "Teresina",
+                "createdAt": "2024-02-25T16:07:00.000Z"
+              },
+              {
+                "id": "0009212c-acf9-403b-b650-a4e77767beff",
+                "name": "Marina Almeida",
+                "email": "marina.almeida.2598@example.com",
+                "city": "Curitiba",
+                "createdAt": "2024-01-02T19:18:00.000Z"
+              },
+              {
+                "id": "000b21eb-b432-444f-8451-675c56fd975c",
+                "name": "Nuno Nunes",
+                "email": "nuno.nunes.92442@example.com",
+                "city": "Fortaleza",
+                "createdAt": "2024-03-05T04:42:00.000Z"
+              },
+              {
+                "id": "000b6202-bee3-4f75-baf5-9cec0a3e594e",
+                "name": "Pedro Vieira",
+                "email": "pedro.vieira.27339@example.com",
+                "city": "Manaus",
+                "createdAt": "2024-01-19T23:39:00.000Z"
+              },
+              {
+                "id": "000b6380-e11a-4fc5-bc44-ab3bd1771eee",
+                "name": "Lucas Dias",
+                "email": "lucas.dias.78058@example.com",
+                "city": "Salvador",
+                "createdAt": "2024-02-24T04:58:00.000Z"
+              },
+              {
+                "id": "000c1ccd-eebd-459d-ae03-bdb04ac5fa88",
+                "name": "Pedro Vieira",
+                "email": "pedro.vieira.76330@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-02-23T00:10:00.000Z"
+              },
+              {
+                "id": "000c3db2-428a-4e0a-ae3f-9836b51f11a7",
+                "name": "Hugo Nunes",
+                "email": "hugo.nunes.20918@example.com",
+                "city": "João Pessoa",
+                "createdAt": "2024-01-15T12:38:00.000Z"
+              },
+              {
+                "id": "000f11df-2e95-4709-9b5c-c25ceb5cc9d3",
+                "name": "Nuno Lima",
+                "email": "nuno.lima.55944@example.com",
+                "city": "Manaus",
+                "createdAt": "2024-02-08T20:24:00.000Z"
+              },
+              {
+                "id": "00105730-ad7f-4687-a78d-82864063d1a4",
+                "name": "Tiago Santos",
+                "email": "tiago.santos.67138@example.com",
+                "city": "Campinas",
+                "createdAt": "2024-02-16T14:58:00.000Z"
+              },
+              {
+                "id": "0010d9c9-51ca-40bf-b49a-4db90eada551",
+                "name": "Iara Esteves",
+                "email": "iara.esteves.28357@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-01-20T16:37:00.000Z"
+              },
+              {
+                "id": "0010e4db-4f55-4b72-ac48-466eb167b901",
+                "name": "Sofia Cardoso",
+                "email": "sofia.cardoso.18587@example.com",
+                "city": "Brasília",
+                "createdAt": "2024-01-13T21:47:00.000Z"
+              },
+              {
+                "id": "0011cfef-3323-4a17-8a56-19ee1e0ff1cf",
+                "name": "Diego Gomes",
+                "email": "diego.gomes.86629@example.com",
+                "city": "Belém",
+                "createdAt": "2024-03-01T03:49:00.000Z"
+              },
+              {
+                "id": "00120edc-b1c9-4c15-a529-8c15ee207375",
+                "name": "Hugo Nunes",
+                "email": "hugo.nunes.96503@example.com",
+                "city": "Recife",
+                "createdAt": "2024-03-08T00:23:00.000Z"
+              },
+              {
+                "id": "00124c61-b7f0-49ad-9f23-ae563ff34a5d",
+                "name": "Hugo Esteves",
+                "email": "hugo.esteves.11855@example.com",
+                "city": "Salvador",
+                "createdAt": "2024-01-09T05:35:00.000Z"
+              },
+              {
+                "id": "001333ce-185f-4a14-b163-ad7e22f27e85",
+                "name": "Ana Pereira",
+                "email": "ana.pereira.20657@example.com",
+                "city": "João Pessoa",
+                "createdAt": "2024-01-15T08:17:00.000Z"
+              },
+              {
+                "id": "00148dfb-7e57-4e00-8946-f2c6ef0156c1",
+                "name": "Iara Barros",
+                "email": "iara.barros.90976@example.com",
+                "city": "Belo Horizonte",
+                "createdAt": "2024-03-04T04:16:00.000Z"
+              },
+              {
+                "id": "00149d99-9946-43fc-a479-9e084cddfe77",
+                "name": "Olivia Esteves",
+                "email": "olivia.esteves.8172@example.com",
+                "city": "Manaus",
+                "createdAt": "2024-01-06T16:12:00.000Z"
+              },
+              {
+                "id": "0014db0f-c06f-4324-8345-028ee9d45f05",
+                "name": "Olivia Esteves",
+                "email": "olivia.esteves.32545@example.com",
+                "city": "Campinas",
+                "createdAt": "2024-01-23T14:25:00.000Z"
+              }
+            ],
+            "resultCount": 98866,
+            "truncated": true,
+            "queries": [
+              "WITH RECURSIVE walk(node, depth) AS ( SELECT ?, 0 UNION SELECT f.followee_id, w.depth + 1 FROM walk w JOIN follows f ON f.follower_id = w.node WHERE w.depth < ? ) SELECT u.* FROM users u WHERE u.id IN (SELECT node FROM walk WHERE depth > 0) AND u.id <> ? ORDER BY u.id  -- params: [\"0290dfeb-0b84-4545-a041-34d36db0c956\",6,\"0290dfeb-0b84-4545-a041-34d36db0c956\"]"
+            ]
+          }
+        },
+        "neo4j": {
+          "timings": {
+            "count": 10,
+            "min": 123.978,
+            "median": 1012.354,
+            "mean": 911.59,
+            "p95": 1337.311,
+            "max": 1337.311
+          },
+          "runsMs": [
+            730.453,
+            612.844,
+            123.978,
+            1259.62,
+            1067.295,
+            1044.271,
+            1337.311,
+            660.343,
+            980.437,
+            1299.349
+          ],
+          "errors": 0,
+          "firstError": null,
+          "sample": {
+            "result": [
+              {
+                "id": "000051f8-b98c-4a36-8c37-fe57ba7a76b1",
+                "name": "Bruno Queiroz",
+                "email": "bruno.queiroz.23201@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-01-17T02:41:00.000Z"
+              },
+              {
+                "id": "000072d9-ea06-4455-aa26-965c5d52ba51",
+                "name": "Ana Gomes",
+                "email": "ana.gomes.68555@example.com",
+                "city": "Rio de Janeiro",
+                "createdAt": "2024-02-17T14:35:00.000Z"
+              },
+              {
+                "id": "0001a81d-b095-417b-8894-ac27451277fa",
+                "name": "Ana Lima",
+                "email": "ana.lima.45181@example.com",
+                "city": "Brasília",
+                "createdAt": "2024-02-01T09:01:00.000Z"
+              },
+              {
+                "id": "0002ec34-d881-4b16-be17-fa1ecb35ec92",
+                "name": "Queila Pereira",
+                "email": "queila.pereira.57516@example.com",
+                "city": "Vitória",
+                "createdAt": "2024-02-09T22:36:00.000Z"
+              },
+              {
+                "id": "00053d33-bf28-4bb8-9cc8-1ed46415a939",
+                "name": "Felipe Santos",
+                "email": "felipe.santos.33176@example.com",
+                "city": "Belém",
+                "createdAt": "2024-01-24T00:56:00.000Z"
+              },
+              {
+                "id": "0006b8cc-841c-419f-8768-4a323b6a5798",
+                "name": "João Barros",
+                "email": "joao.barros.41293@example.com",
+                "city": "Campinas",
+                "createdAt": "2024-01-29T16:13:00.000Z"
+              },
+              {
+                "id": "0008ab9e-a2c0-4d39-9ce3-aedc6408f34f",
+                "name": "Olivia Vieira",
+                "email": "olivia.vieira.82474@example.com",
+                "city": "Curitiba",
+                "createdAt": "2024-02-27T06:34:00.000Z"
+              },
+              {
+                "id": "0008e496-d12c-4f24-847f-d1c35277f931",
+                "name": "Marina Pereira",
+                "email": "marina.pereira.80167@example.com",
+                "city": "Teresina",
+                "createdAt": "2024-02-25T16:07:00.000Z"
+              },
+              {
+                "id": "0009212c-acf9-403b-b650-a4e77767beff",
+                "name": "Marina Almeida",
+                "email": "marina.almeida.2598@example.com",
+                "city": "Curitiba",
+                "createdAt": "2024-01-02T19:18:00.000Z"
+              },
+              {
+                "id": "000b21eb-b432-444f-8451-675c56fd975c",
+                "name": "Nuno Nunes",
+                "email": "nuno.nunes.92442@example.com",
+                "city": "Fortaleza",
+                "createdAt": "2024-03-05T04:42:00.000Z"
+              },
+              {
+                "id": "000b6202-bee3-4f75-baf5-9cec0a3e594e",
+                "name": "Pedro Vieira",
+                "email": "pedro.vieira.27339@example.com",
+                "city": "Manaus",
+                "createdAt": "2024-01-19T23:39:00.000Z"
+              },
+              {
+                "id": "000b6380-e11a-4fc5-bc44-ab3bd1771eee",
+                "name": "Lucas Dias",
+                "email": "lucas.dias.78058@example.com",
+                "city": "Salvador",
+                "createdAt": "2024-02-24T04:58:00.000Z"
+              },
+              {
+                "id": "000c1ccd-eebd-459d-ae03-bdb04ac5fa88",
+                "name": "Pedro Vieira",
+                "email": "pedro.vieira.76330@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-02-23T00:10:00.000Z"
+              },
+              {
+                "id": "000c3db2-428a-4e0a-ae3f-9836b51f11a7",
+                "name": "Hugo Nunes",
+                "email": "hugo.nunes.20918@example.com",
+                "city": "João Pessoa",
+                "createdAt": "2024-01-15T12:38:00.000Z"
+              },
+              {
+                "id": "000f11df-2e95-4709-9b5c-c25ceb5cc9d3",
+                "name": "Nuno Lima",
+                "email": "nuno.lima.55944@example.com",
+                "city": "Manaus",
+                "createdAt": "2024-02-08T20:24:00.000Z"
+              },
+              {
+                "id": "00105730-ad7f-4687-a78d-82864063d1a4",
+                "name": "Tiago Santos",
+                "email": "tiago.santos.67138@example.com",
+                "city": "Campinas",
+                "createdAt": "2024-02-16T14:58:00.000Z"
+              },
+              {
+                "id": "0010d9c9-51ca-40bf-b49a-4db90eada551",
+                "name": "Iara Esteves",
+                "email": "iara.esteves.28357@example.com",
+                "city": "Florianópolis",
+                "createdAt": "2024-01-20T16:37:00.000Z"
+              },
+              {
+                "id": "0010e4db-4f55-4b72-ac48-466eb167b901",
+                "name": "Sofia Cardoso",
+                "email": "sofia.cardoso.18587@example.com",
+                "city": "Brasília",
+                "createdAt": "2024-01-13T21:47:00.000Z"
+              },
+              {
+                "id": "0011cfef-3323-4a17-8a56-19ee1e0ff1cf",
+                "name": "Diego Gomes",
+                "email": "diego.gomes.86629@example.com",
+                "city": "Belém",
+                "createdAt": "2024-03-01T03:49:00.000Z"
+              },
+              {
+                "id": "00120edc-b1c9-4c15-a529-8c15ee207375",
+                "name": "Hugo Nunes",
+                "email": "hugo.nunes.96503@example.com",
+                "city": "Recife",
+                "createdAt": "2024-03-08T00:23:00.000Z"
+              },
+              {
+                "id": "00124c61-b7f0-49ad-9f23-ae563ff34a5d",
+                "name": "Hugo Esteves",
+                "email": "hugo.esteves.11855@example.com",
+                "city": "Salvador",
+                "createdAt": "2024-01-09T05:35:00.000Z"
+              },
+              {
+                "id": "001333ce-185f-4a14-b163-ad7e22f27e85",
+                "name": "Ana Pereira",
+                "email": "ana.pereira.20657@example.com",
+                "city": "João Pessoa",
+                "createdAt": "2024-01-15T08:17:00.000Z"
+              },
+              {
+                "id": "00148dfb-7e57-4e00-8946-f2c6ef0156c1",
+                "name": "Iara Barros",
+                "email": "iara.barros.90976@example.com",
+                "city": "Belo Horizonte",
+                "createdAt": "2024-03-04T04:16:00.000Z"
+              },
+              {
+                "id": "00149d99-9946-43fc-a479-9e084cddfe77",
+                "name": "Olivia Esteves",
+                "email": "olivia.esteves.8172@example.com",
+                "city": "Manaus",
+                "createdAt": "2024-01-06T16:12:00.000Z"
+              },
+              {
+                "id": "0014db0f-c06f-4324-8345-028ee9d45f05",
+                "name": "Olivia Esteves",
+                "email": "olivia.esteves.32545@example.com",
+                "city": "Campinas",
+                "createdAt": "2024-01-23T14:25:00.000Z"
+              }
+            ],
+            "resultCount": 98866,
+            "truncated": true,
+            "queries": [
+              "MATCH (me:User {id: $id})-[:FOLLOWS*1..6]->(u:User) WHERE u <> me RETURN DISTINCT u ORDER BY u.id  -- params: {\"id\":\"0290dfeb-0b84-4545-a041-34d36db0c956\"}"
+            ]
+          }
+        }
+      },
+      "comparison": {
+        "fasterDb": "neo4j",
+        "speedup": 2.041
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+operation,category,sqlite median ms,neo4j median ms,sqlite p95 ms,neo4j p95 ms,faster,speedup,equal,errors
+reachable,traversal,2066.264,1012.354,3870.493,1337.311,neo4j,2.041,yes,0

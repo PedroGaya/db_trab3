@@ -25,3 +25,35 @@ O Neo4j disponibiliza técnicas padrão de escalabilidade, como **clusters e rep
 **Telecom, cadeia de suprimentos e manufatura.** Empresas do setor usam o Neo4j para representar a cadeia como um grafo de componentes interconectados e aplicar algoritmos para analisar rotas, disponibilidade e dependências.
 
 **Detecção de fraude e risco.** O paradigma de grafos é usado para identificar padrões de conluio e redes de transações anômalas, um tipo de análise em que a estrutura das conexões importa tanto quanto os valores individuais.
+
+## Comparativos
+
+| Dimensão             | Métrica                                                      |      SQLite |         Neo4j | Unidade  | Vencedor |  Razão |
+| -------------------- | ------------------------------------------------------------ | ----------: | ------------: | -------- | -------- | -----: |
+| Consultas simples    | Mediana de getUser                                           |    **0.09** |         1.376 | ms       | SQLite   | 15.29x |
+|                      | Mediana de following                                         |    **1.69** |         1.918 | ms       | SQLite   |  1.13x |
+|                      | Mediana de followers                                         |       1.736 |      **1.39** | ms       | Neo4j    |  1.25x |
+| Agregações           | Mediana de usersPerCity                                      |   **4.144** |        24.231 | ms       | SQLite   |  5.85x |
+|                      | Mediana de topFollowed                                       | **377.248** |       417.403 | ms       | SQLite   |  1.11x |
+| Multi-salto limitado | Mediana de recommend                                         |   **1.087** |          1.81 | ms       | SQLite   |  1.67x |
+|                      | Mediana de mutualFollows                                     |   **0.545** |         3.838 | ms       | SQLite   |  7.04x |
+|                      | Mediana de timeline                                          |       3.246 |     **1.657** | ms       | Neo4j    |  1.96x |
+| Travessia profunda   | Mediana de reachable (profundidade 3)                        |      30.496 |    **11.399** | ms       | Neo4j    |  2.68x |
+|                      | Mediana de shortestPath (máx. 6 saltos)                      |     757.136 |     **8.672** | ms       | Neo4j    | 87.31x |
+|                      | Mediana de reachable (profundidade 6)                        |   2,066.264 | **1,012.354** | ms       | Neo4j    |  2.04x |
+| Latência de cauda    | p95 / mediana de shortestPath (máx. 6 saltos)                |         4.2 |      **1.51** | x        | Neo4j    |  2.78x |
+|                      | p95 / mediana de recommend                                   |        1.78 |      **1.35** | x        | Neo4j    |  1.32x |
+|                      | p95 / mediana de reachable (profundidade 6)                  |        1.87 |      **1.32** | x        | Neo4j    |  1.42x |
+| Throughput           | Carga de usuários                                            |  **22,649** |        16,859 | linhas/s | SQLite   |  1.34x |
+|                      | Carga de posts                                               |  **26,215** |        20,324 | linhas/s | SQLite   |  1.29x |
+|                      | Carga de follows                                             |      12,497 |    **20,800** | linhas/s | Neo4j    |  1.66x |
+|                      | Tempo total de carga                                         |    95,950.9 |  **68,813.5** | ms       | Neo4j    |  1.39x |
+| Escritas             | Mediana de createUser                                        |   **0.073** |         2.785 | ms       | SQLite   | 38.15x |
+|                      | Mediana de follow                                            |   **0.058** |          2.83 | ms       | SQLite   | 48.79x |
+|                      | Mediana de createPost                                        |   **0.323** |         2.828 | ms       | SQLite   |  8.76x |
+|                      | Mediana de deleteUser (cascata)                              |   **0.122** |         3.528 | ms       | SQLite   | 28.92x |
+| Escalabilidade       | Crescimento da mediana de getUser (1k -> 100k usuários)      |        0.59 |      **0.37** | x        | Neo4j    |  1.59x |
+|                      | Crescimento da mediana de recommend (1k -> 100k usuários)    |         4.1 |      **0.79** | x        | Neo4j    |  5.19x |
+|                      | Crescimento da mediana de usersPerCity (1k -> 100k usuários) |       40.23 |     **11.32** | x        | Neo4j    |  3.55x |
+|                      | Crescimento da mediana de reachable (1k -> 100k usuários)    |        16.4 |      **1.46** | x        | Neo4j    | 11.23x |
+|                      | Crescimento da mediana de shortestPath (1k -> 100k usuários) |      125.46 |      **3.31** | x        | Neo4j    |  37.9x |

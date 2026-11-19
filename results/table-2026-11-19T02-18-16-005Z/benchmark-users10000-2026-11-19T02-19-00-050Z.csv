@@ -1,0 +1,11 @@
+operation,category,sqlite median ms,neo4j median ms,sqlite p95 ms,neo4j p95 ms,faster,speedup,equal,errors
+getUser,point,0.079,1.434,0.122,1.749,sqlite,18.152,yes,0
+following,traversal,0.135,1.625,0.246,3.031,sqlite,12.037,yes,0
+followers,traversal,0.147,1.522,0.274,1.877,sqlite,10.354,yes,0
+mutualFollows,traversal,0.183,4.021,0.314,4.833,sqlite,21.973,yes,0
+timeline,traversal,0.202,1.691,0.282,2.058,sqlite,8.371,yes,0
+reachable,traversal,4.873,9.114,7.459,14.38,sqlite,1.87,yes,0
+shortestPath,traversal,83.556,2.795,1880.934,11.851,neo4j,29.895,yes,0
+recommend,traversal,0.557,1.908,0.759,3.025,sqlite,3.425,yes,0
+usersPerCity,aggregate,0.337,3.932,0.426,4.447,sqlite,11.668,yes,0
+topFollowed,aggregate,13.388,28.854,14.048,41.986,sqlite,2.155,yes,0

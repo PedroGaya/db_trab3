@@ -7,7 +7,8 @@
     "start": "bun --env-file=../.env src/index.ts",
     "build": "tsc --noEmit",
     "seed": "bun --env-file=../.env src/cli/seed.ts",
-    "benchmark": "bun --env-file=../.env src/cli/benchmark.ts"
+    "benchmark": "bun --env-file=../.env src/cli/benchmark.ts",
+    "gen-table": "bun --env-file=../.env src/cli/gen-table.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
