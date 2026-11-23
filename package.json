@@ -2,7 +2,8 @@
   "name": "trab3",
   "private": true,
   "workspaces": [
-    "server"
+    "server",
+    "client"
   ],
   "scripts": {
     "dev": "bun --filter '*' dev",
