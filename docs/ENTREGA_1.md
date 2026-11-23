@@ -61,3 +61,14 @@ Por consequência, **Neo4j** _ganha_ em travessias profundas (`shortestPath` 87,
 |                      | Crescimento da mediana de usersPerCity (1k -> 100k usuários) |       40.23 |     **11.32** | x        | Neo4j    |  3.55x |
 |                      | Crescimento da mediana de reachable (1k -> 100k usuários)    |        16.4 |      **1.46** | x        | Neo4j    | 11.23x |
 |                      | Crescimento da mediana de shortestPath (1k -> 100k usuários) |      125.46 |      **3.31** | x        | Neo4j    |  37.9x |
+
+## Execução
+
+Requer bun, docker.
+
+Da raiz do projeto:
+
+```bash
+docker compose -up -d
+bun run dev
+```
